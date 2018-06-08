@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('patients','PatientController')->middleware('auth');;
-Route::resource('doctors','DoctorController')->middleware('auth');;
-Route::resource('schedules','ScheduleController')->middleware('auth');;
+Route::resource('patients','PatientController')->middleware('auth');
+Route::resource('doctors','DoctorController')->middleware('auth');
+Route::resource('schedules','ScheduleController')->middleware('auth');
+
+Route::get('/listDoctors', function () {
+	return response()->json(\App\Doctor::all());
+});
