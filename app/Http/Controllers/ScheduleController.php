@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Schedule;
 use Illuminate\Http\Request;
+use DB;
+use Event;
 
 class ScheduleController extends Controller
 {
@@ -14,8 +16,17 @@ class ScheduleController extends Controller
      */
     public function index()
     {
+        $start_s = \Request::get('start_s');
+        $start_f = strlen($start_s)<= 0 ? date('Y-m-d') : date('Y-m-d',strtotime($start_s));
         $schedules=\App\Schedule::all();
-        return view('schedules.index',compact('schedules'));
+        $schedules-> where('start_at','>',$start_f.' 00:00:00')->where('start_at','<', $start_f.' 23:59:00');
+
+        //exit;
+        //where('date(start_at)', '=', "\"$start_s\"");//->orderBy('start_at', 'desc');
+
+        //where('start_at','>=',''.$start_f.'')
+            
+        return view('schedules.index',compact('schedules', 'start_s'));
     }
 
     /**

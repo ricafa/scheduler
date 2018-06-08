@@ -7,6 +7,17 @@
 			<i class="fa fa-plus"></i>New Schedule
 		</a>
 		<h2>Schedules</h2>
+
+		{!! Form::open(['method'=>'GET','url'=>'schedules','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
+		<div class="input-group custom-search-form">
+		    <input type="date" class="form-control" value="{{ $start_s }}" name="start_s" placeholder="Search...">
+		    <span class="input-group-btn">
+		        <button class="btn btn-default-sm" type="submit">
+		            <i class="fa fa-search"></i>
+		        </button>
+		    </span>
+		</div>
+		{!! Form::close() !!}
 		@if (count($schedules) == 0)
 		  <div class="" style="font-size: 30px;">
 		    There is no Schedules
