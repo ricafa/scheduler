@@ -10,4 +10,3 @@ class Doctor extends Model
         'name', 'document'
     ];
 }
-}

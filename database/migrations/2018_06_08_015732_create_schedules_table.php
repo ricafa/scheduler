@@ -19,9 +19,9 @@ class CreateSchedulesTable extends Migration
             $table->unsignedInteger('doctor_id');
             $table->datetime('start_at');
             $table->datetime('end_at');
-            $table->boolean('showed_up');
-            $table->string('reason');
-            $table->string('obs');
+            $table->boolean('showed_up')->nullable();
+            $table->string('reason')->nullable();
+            $table->string('obs')->nullable();
             $table->timestamps();
             
             #Foreign Key
