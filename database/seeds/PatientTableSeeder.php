@@ -19,7 +19,7 @@ class PatientTableSeeder extends Seeder
 
 		foreach(range(1,20) as $i){
 			Patient::create([
-				'name'=>$faker->word(),
+				'name'=>$faker->name(),
 				'cpf' =>$faker->ipv4()
 			]);
 		}

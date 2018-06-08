@@ -19,7 +19,7 @@ class DoctorTableSeeder extends Seeder
 
 		foreach(range(1,20) as $i){
 			Doctor::create([
-				'name'=>$faker->word(),
+				'name'=>$faker->name(),
 				'document' =>$faker->ipv4()
 			]);
 		}
