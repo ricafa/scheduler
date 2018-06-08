@@ -15,7 +15,7 @@ php artisan migrate:fresh --seed
 or
 php artisan db:seed
 
-To list doctors, access the url '/listDoctors'
+To list doctors, access the url '/listDoctors' via POST.
 
 
 ## About Laravel

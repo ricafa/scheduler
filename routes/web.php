@@ -23,6 +23,7 @@ Route::resource('patients','PatientController')->middleware('auth');
 Route::resource('doctors','DoctorController')->middleware('auth');
 Route::resource('schedules','ScheduleController')->middleware('auth');
 
-Route::get('/listDoctors', function () {
-	return response()->json(\App\Doctor::all());
+Route::post('/listDoctors', function () {
+	return response()->json(\App\Doctor::all())->
+	header('content-type', 'application/json');
 });

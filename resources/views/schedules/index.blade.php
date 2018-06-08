@@ -25,10 +25,10 @@
 			    <tbody>
 				  	@foreach ($schedules as $schedule)
 				      <tr>
-				        <td>{{ $schedule->patient_id }}</td>
-				        <td>{{ $schedule->doctor_id }}</td>
-				        <td>{{ $schedule->start_at }}</td>
-				        <td>{{ $schedule->end_at }}</td>
+				        <td>{{ $schedule->patient->name }}</td>
+				        <td>{{ $schedule->doctor->name }}</td>
+				        <td>{{ date('m/d/Y H:i', strtotime($schedule->start_at)) }}</td>
+				        <td>{{ date('m/d/Y H:i', strtotime($schedule->end_at)) }}</td>
 				        <td>
 				          <form action="{{ route('schedules.destroy',$schedule->id) }}" method="POST">
 
