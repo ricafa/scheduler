@@ -13,7 +13,7 @@
 		  </div>
 		@else
 			<div class="card">
-			  <table class="table table-stripped table-hover table-responsive">
+			  <table class="table table-stripped table-hover table-responsive" id="sample-table">
 			    <thead>
 			    	<tr>
 				      <th>Patient</th>
@@ -38,6 +38,7 @@
 				  	        @method('DELETE')
 
 				  	        <button type="submit" class="btn btn-outline-danger"><i class="fa fa-times"></i></button>
+
 				          </form>
 				        </td>
 				      </tr>
